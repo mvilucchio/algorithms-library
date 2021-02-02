@@ -5,30 +5,25 @@
 
 #define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a < _b ? _a : _b; })
 
-
-void merge(int * merged, int * arr1, int * arr2, int len1, int len2) {
+void merge_bottom_up (int * merged, int * arr1, int * arr2, int len1, int len2) {
     
     int i = 0, j = 0, k = 0;
 
     while (j < len1 && k < len2) {
-        if (arr1[j] < arr2[k]) {
+        if (arr1[j] < arr2[k]) 
             merged[i++] = arr1[j++];
-        }
-        else {
+        else 
             merged[i++] = arr2[k++];
-        }
     }
 
-    while (j < len1) {
+    while (j < len1) 
         merged[i++] = arr1[j++];
-    }
 
-    while (k < len2) {
+    while (k < len2) 
         merged[i++] = arr2[k++];
-    }
 }
 
-void mergesort(int * arr, int * tmp, int len) {
+void merge_sort_bottom_up (int * arr, int * tmp, int len) {
 
     int width, j, m;
 
